@@ -69,7 +69,7 @@ header {
     color: #333333;
 }
 
-.options {
+.optionsDishes, .optionsDrinks, .optionsDesserts {
     width: 100vw;
     height: 216px;
 
@@ -85,7 +85,7 @@ header {
     display: none;
 }
 
-.option {
+.option{
     width: 172px;
     height: 216px;
 
@@ -106,7 +106,8 @@ header {
     border-radius: 9px;
 }
 
-.option img {
+
+img {
     width: 144px;
     height: 87px;
 
@@ -214,8 +215,6 @@ footer{
 .activated {
 
     background-color: #32B72F;
-
-    border: none;
 
     font-weight: 700;
 
