@@ -12,7 +12,7 @@ const menu = [
     {image: "./assets/drinks/grape-juice.png", optionTitle: "Suco de Uva", description: "feita com amor e sem crueldade", price: "3,50", idPrice: 3.50, function: "selectDrinks"}
     ],
     [{optionsTitle: "Por fim, sua sobremesa", class: "optionsDesserts"},
-    {image: "./assets/dessert/cookies.jpeg", optionTitle: "Coockies", description: "feitos com amor e sem crueldade", price: "4,90", idPrice: 4.90, function: "selectDesserts"},
+    {image: "./assets/dessert/cookies.jpeg", optionTitle: "Cookies", description: "feitos com amor e sem crueldade", price: "4,90", idPrice: 4.90, function: "selectDesserts"},
     {image: "./assets/dessert/chocolate-mousse.jpeg", optionTitle: "Mou. de Chocolate", description: "feito com amor e sem crueldade", price: "5,90", idPrice: 5.90, function: "selectDesserts"},
     {image: "./assets/dessert/passion-fruit-mousse.jpeg", optionTitle: "Mous. de Maracujá", description: "feito com amor e sem crueldade", price: "5,50", idPrice: 5.50, function: "selectDesserts"},
     {image: "./assets/dessert/italian-fudge.jpeg", optionTitle: "Palha Italiana", description: "feita com amor e sem crueldade", price: "6,70", idPrice: 6.70, function: "selectDesserts"}
@@ -34,8 +34,39 @@ function startScreen() {
         <div class="contents"> </div>
 
         <footer>
-            <button class="finish-button" onclick="alert('tá clicando')">Selecione os 3 itens para fechar o pedido</button>
+            <button class="finish-button" onclick="requestData()">Selecione os 3 itens para fechar o pedido</button>
         </footer>
+
+        <div class="overlay-screen hidden">
+            <div class="check-screen">
+                <h1>Confirme seu pedido</h1>
+                <ul>
+                    <li>
+                        <p class="dish-title"></p>
+                        <p class="dish-price"></p>
+                    </li>
+                    <li>
+                        <p class="drink-title"></p>
+                        <p class="drink-price"></p>
+                    </li>
+                    <li>
+                        <p class="dessert-title"></p>
+                        <p class="dessert-price"></p>
+                    </li>
+                    <li>
+                        <p class="total-title">TOTAL</p>
+                        <p class="total-price"></p>
+                    </li>
+                </ul>
+                <button class="send-order" onclick="sendOrder()">Tudo certo, pode pedir!</button>
+                <h2 class="cancel-order" onclick="cancelOrder()">Cancelar</h2>
+            </div>
+        </div>
+
+
+
+
+
     `;
 
     const options = document.querySelector(".contents");
@@ -54,13 +85,10 @@ function startScreen() {
             option.innerHTML += `
                 <div class="option" onclick="${menu[i][j].function}(this, '${menu[i][j].optionTitle}', ${menu[i][j].idPrice})">
                     <img src="${menu[i][j].image}" alt="${menu[i][j].optionTitle}">
-                    <p class="option-title">${menu[i][j].optionTitle}</h3>
-                    <p class="option-description">${menu[i][j].description}</h4>
+                    <p class="option-title">${menu[i][j].optionTitle}</p>
+                    <p class="option-description">${menu[i][j].description}</p>
                     <div class="option-fotter">
-                        <div class="price">
-                            <p class="price-sign">R$ </h5>
-                            <p class="option-price">${menu[i][j].price}</h6>
-                        </div>
+                        <p class="price">R$ ${menu[i][j].price}</p>
                         <ion-icon name='checkmark-circle-sharp' class='option-check'></ion-icon>
                     </div>
                 </div>
@@ -69,13 +97,18 @@ function startScreen() {
     }
 }
 
-let dishTitle = "";
-let drinkTitle = "";
-let dessertTitle = "";
-let dishPrice = 0;
-let drinkPrice = 0;
-let dessertPrice = 0;
-let finalPrice = 0;
+let userName;
+let userAddress;
+
+let dishTitle;
+let drinkTitle;
+let dessertTitle;
+
+let dishPrice;
+let drinkPrice;
+let dessertPrice;
+
+let totalPrice;
 
 function selectDishes(option, optionTitle, idPrice) {
 
@@ -91,6 +124,7 @@ function selectDishes(option, optionTitle, idPrice) {
 
     activateButton();
 }
+
 function selectDrinks(option, optionTitle, idPrice) {
 
     const isSelectedDrink = document.querySelector(".optionsDrinks .isSelected");
@@ -105,6 +139,7 @@ function selectDrinks(option, optionTitle, idPrice) {
 
     activateButton();
 }
+
 function selectDesserts(option, optionTitle, idPrice) {
 
     const isSelectedDessert = document.querySelector(".optionsDesserts .isSelected");
@@ -125,6 +160,7 @@ function activateButton() {
     const isSelectedDish = document.querySelector(".optionsDishes .isSelected");
     const isSelectedDrink = document.querySelector(".optionsDrinks .isSelected");
     const isSelectedDessert = document.querySelector(".optionsDesserts .isSelected");
+
     const finishButton = document.querySelector(".finish-button");
 
     if ((isSelectedDish !== null) && (isSelectedDrink !== null) && (isSelectedDessert !== null)) {
@@ -132,4 +168,35 @@ function activateButton() {
         finishButton.classList.add("activated");
     }
 
+}
+
+function requestData() {
+
+    userName = prompt("Nome: ");
+    userAddress = prompt("Endereço: ");
+
+    confirmOrder();
+}
+
+function sendOrder() {
+
+    window.open(`https://wa.me/5555984660648?text=${encodeURIComponent(`Olá, gostaria de fazer o pedido:\n- Prato: ${dishTitle}\n- Bebida: ${drinkTitle}\n- Sobremesa: ${dessertTitle} \nTotal: R$ ${totalPrice.toFixed(2)}\n\nNome: ${userName}\nEndereço: ${userAddress}`)}`).focus;
+}
+
+function cancelOrder() {
+    document.querySelector(".overlay-screen").classList.add("hidden");
+}
+
+function confirmOrder() {
+
+    totalPrice = dishPrice + drinkPrice + dessertPrice;
+
+    document.querySelector(".overlay-screen").classList.remove("hidden");
+    document.querySelector(".dish-title").innerHTML = dishTitle;
+    document.querySelector(".dish-price").innerHTML = (dishPrice.toFixed(2).replace('.',','));
+    document.querySelector(".drink-title").innerHTML = drinkTitle;
+    document.querySelector(".drink-price").innerHTML = (drinkPrice.toFixed(2).replace('.',','));
+    document.querySelector(".dessert-title").innerHTML = dessertTitle;
+    document.querySelector(".dessert-price").innerHTML = (dessertPrice.toFixed(2).replace('.',','));
+    document.querySelector(".total-price").innerHTML = `R$ ${(totalPrice.toFixed(2).replace('.',','))}`
 }
