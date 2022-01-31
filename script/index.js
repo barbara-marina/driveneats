@@ -68,9 +68,9 @@ function startScreen() {
 
     for (let i = 0; i < menu.length; i++) {
         options.innerHTML += `
-            <section>
+            <section  data-identifier="${menu[i][0].idData}">
                 <h1 class="options-title"> ${menu[i][0].optionsTitle} </h1>
-                <div class="${menu[i][0].class}" data-identifier="${menu[i][0].idData}"></div>
+                <div class="${menu[i][0].class}"></div>
             </section>
         `;
         
