@@ -1,21 +1,21 @@
 const menu = [
     [{optionsTitle: "Primeiro, seu prato", class: "optionsDishes", idData: "dishes"},
-    {image: "./assets/dishes/couscous.jpg", optionTitle: "Cuscuz", description: "cuscuz feito sem crueldade animal", price: "5,90", priceId: 5.90, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dishes/pancakes.jpg", optionTitle: "Panquecas", description: "panquecas feitas sem crueldade", price: "7,90", priceId: 7.90, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dishes/cassava-puffs.jpeg", optionTitle: "Pães de Beijo", description: "pães de beijo feitos sem crueldade", price: "7,50", priceId: 7.50, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dishes/sandwich.jpeg", optionTitle: "Sandu. de abacate", description: "sanduíche de abacate feito sem crueldade", price: "6,50", priceId: 6.50, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
+    {image: "./assets/dishes/couscous.jpg", optionTitle: "Cuscuz", description: "cuscuz soltinho e feito com muito amor", price: "5,90", priceId: 5.90, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dishes/pancakes.jpg", optionTitle: "Panquecas", description: "panqueca doce feita com amor e morango", price: "7,90", priceId: 7.90, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dishes/cassava-puffs.jpeg", optionTitle: "Pães de Beijo", description: "pão de beijo macio feito com muito amor", price: "7,50", priceId: 7.50, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dishes/sandwich.jpeg", optionTitle: "Sandu. de abacate", description: "sanduíche de abacate beeeeeem temperado", price: "6,50", priceId: 6.50, function: "selectDishes", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
     ],
     [{optionsTitle: "Agora, sua bebida", class: "optionsDrinks", idData: "drinks"},
-    {image: "./assets/drinks/pineapple-juice.png", optionTitle: "Suco de Abacaxi", description: "feito com amor e sem crueldade", price: "3,90", priceId: 3.90, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/drinks/orange-juice.png", optionTitle: "Suco de Laranja", description: "feito com amor e sem crueldade", price: "4,90", priceId: 4.90, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/drinks/passion-fruit-juice.png", optionTitle: "Suco de Maracujá", description: "feito com amor e sem crueldade", price: "3,80", priceId: 3.80, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/drinks/grape-juice.png", optionTitle: "Suco de Uva", description: "feita com amor e sem crueldade", price: "3,50", priceId: 3.50, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
+    {image: "./assets/drinks/pineapple-juice.png", optionTitle: "Suco de Abacaxi", description: "feito com abacaxi e raminhos de hortelã", price: "3,90", priceId: 3.90, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/drinks/orange-juice.png", optionTitle: "Suco de Laranja", description: "feito com a fruta espremida e somente", price: "4,90", priceId: 4.90, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/drinks/passion-fruit-juice.png", optionTitle: "Suco de Maracujá", description: "feito com maracujá beeeeeeem geladinho", price: "3,80", priceId: 3.80, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/drinks/grape-juice.png", optionTitle: "Suco de Uva", description: "suco de uva integral s/ adoçante e açúcar", price: "3,50", priceId: 3.50, function: "selectDrinks", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
     ],
     [{optionsTitle: "Por fim, sua sobremesa", class: "optionsDesserts", idData: "desserts"},
-    {image: "./assets/dessert/cookies.jpeg", optionTitle: "Cookies", description: "feitos com amor e sem crueldade", price: "4,90", priceId: 4.90, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dessert/chocolate-mousse.jpeg", optionTitle: "Mou. de Chocolate", description: "feito com amor e sem crueldade", price: "5,90", priceId: 5.90, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dessert/passion-fruit-mousse.jpeg", optionTitle: "Mous. de Maracujá", description: "feito com amor e sem crueldade", price: "5,50", priceId: 5.50, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
-    {image: "./assets/dessert/italian-fudge.jpeg", optionTitle: "Palha Italiana", description: "feita com amor e sem crueldade", price: "6,70", priceId: 6.70, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
+    {image: "./assets/dessert/cookies.jpeg", optionTitle: "Cookies", description: "crocantes por fora e macios por dentro", price: "4,90", priceId: 4.90, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dessert/chocolate-mousse.jpeg", optionTitle: "Mou. de Chocolate", description: "mousse de chocolate cremoso e geladinho", price: "5,90", priceId: 5.90, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dessert/passion-fruit-mousse.jpeg", optionTitle: "Mous. de Maracujá", description: "mousse de maracujá cremoso e geladinho", price: "5,50", priceId: 5.50, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"},
+    {image: "./assets/dessert/italian-fudge.jpeg", optionTitle: "Palha Italiana", description: "palha italiana macia e beeeeeeem recheada", price: "6,70", priceId: 6.70, function: "selectDesserts", idOption: "food-option", idTitle: "food-title", idPrice: "food-price"}
     ]   
 ];
 
